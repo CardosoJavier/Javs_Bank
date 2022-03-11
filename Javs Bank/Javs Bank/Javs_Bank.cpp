@@ -14,9 +14,13 @@
 */
 
 
-// libraries used
-
+// libraries
 #include <iostream>
+#include <iomanip>
+#include <fstream>
+
+// files 
+#include "Javs_Bank.h"
 
 using namespace std;
 
@@ -24,7 +28,24 @@ using namespace std;
 // main function
 int main(void) {
 
-	cout << "Hello world" << endl;
+	// variable initialized with the returning value of userAccess to 
+	// login or sign up
+
+	int accessTo = userAccess();
+
+	// if statements to either login or sign up
+	if (accessTo == 1) {
+
+		cout << "Login" << endl;
+	}
+
+	else {
+
+		cout << "Sign up" << endl;
+	}
+
 
 	return 0;
 }
+
+
