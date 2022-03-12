@@ -139,11 +139,16 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Access.cpp" />
     <ClCompile Include="Javs_Bank.cpp" />
     <ClCompile Include="Menus.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Javs_Bank.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="Javs.txt" />
+    <Text Include="password.txt" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

@@ -5,5 +5,12 @@
 */
 
 // 1rs function
-int userAccess();
+int userSelection();
 
+
+/*
+	Functions in Access.cpp
+*/
+
+// 1rs function
+bool logIn();

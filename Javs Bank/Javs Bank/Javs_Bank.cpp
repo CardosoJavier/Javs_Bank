@@ -13,10 +13,9 @@
 *				- consult balance.
 */
 
-
 // libraries
 #include <iostream>
-#include <iomanip>
+#include <string>
 #include <fstream>
 
 // files 
@@ -31,19 +30,31 @@ int main(void) {
 	// variable initialized with the returning value of userAccess to 
 	// login or sign up
 
-	int accessTo = userAccess();
+	int selection = userSelection();
 
 	// if statements to either login or sign up
-	if (accessTo == 1) {
+	if (selection == 1) {
+		
+		// if statement to check if access was granted
+		bool checkAccess = false;
+		checkAccess = logIn();
 
-		cout << "Login" << endl;
+		if (checkAccess == true) {
+
+			cout << "\nWelcome back" << endl;
+		}
+
+		else {
+
+			cout << "\nContact customer service." << endl;
+		}
+
 	}
 
 	else {
 
-		cout << "Sign up" << endl;
+		cout << "\nSign up" << endl;
 	}
-
 
 	return 0;
 }

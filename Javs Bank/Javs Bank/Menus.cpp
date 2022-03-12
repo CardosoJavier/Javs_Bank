@@ -1,6 +1,6 @@
 /*
 *	Developer: Javier Cardoso.
-*	File Name: Menus
+*	File Name: Menus.cpp
 *
 *	Description:
 *		A specific file to create all the functions related 
@@ -12,26 +12,25 @@
 #include <iomanip>
 #include <cstdlib>
 
-using namespace std;
-
 // headers
 #include "Javs_Bank.h"
 
+using namespace std;
 
 /*
 * Function name: userAccess
 * 
 * Function Description:
-*	This function will responsible of the sign up and login
-*	of the user. 
+*	This function will responsible of return the user selection of 
+	sign up or login. The program will terminate if the user selects
+	to exit.
 *
 *	Information:
 *		Type: int
 *		Parameters: None
 *		Return: login(1) or sign up(2)
 */
-
-int userAccess() {
+int userSelection() {
 
 	int userOption;
 
@@ -108,8 +107,6 @@ int userAccess() {
 				return userOption;
 			}
 		}
-
-
 	}
 
 	return 0;
