@@ -17,3 +17,10 @@ bool logIn();
 
 //2nd function
 void signUp();
+
+/*
+	Functions in Bank_System.cpp
+*/
+
+// 1st function
+void run_System();
