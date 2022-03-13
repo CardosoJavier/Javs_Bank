@@ -47,8 +47,33 @@ void run_System() {
 
 				int userAction = account_Interface();
 
-				cout << userAction << endl;
-				selection = 0;
+				// while loop to let the user make several transactions into the account.
+				while (userAction != 0) {
+
+					// switch statements to let the user pick an option
+					switch (userAction) {
+
+						case 1:
+							deposit();
+							userAction = account_Interface();
+							break;
+
+						case 2:
+							withdraw();
+							userAction = account_Interface();
+							break;
+
+						case 3:
+							check_Balance();
+							userAction = account_Interface();
+							break;
+
+						case 0:
+							cout << "Good bye, " << "user" << endl;
+							userAction = 0;
+							break;
+					}
+				}
 
 			}
 
@@ -87,6 +112,10 @@ void run_System() {
 				}
 			}
 		}
+
+
+		// selection = 0 to ende the program
+		selection = 0;
 
 	}
 

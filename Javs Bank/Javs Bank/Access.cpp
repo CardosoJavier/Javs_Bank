@@ -11,12 +11,16 @@
 #include <iostream>
 #include <cstdlib>
 #include <fstream>
+#include <string>
 
 // headers
 #include "Javs_Bank.h"
 
 using namespace std;
 
+// prototypes
+bool logIn();
+void signUp();
 
 /*
 * Function name: logIn
@@ -35,6 +39,7 @@ bool logIn() {
 	// variable to hold username and password entered by user
 	string username;
 	string password;
+	string directory = "C:\\Users\\Cardo\\Desktop\\Personal Projects\\Using C++\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\";
 
 	// asks and gets username and password
 
@@ -54,7 +59,7 @@ bool logIn() {
 
 	// open the file with the user and password
 	string usernameFile = username + "_Username.txt";
-	readFile.open(usernameFile);
+	readFile.open(directory + usernameFile);
 
 	// if statement to check file is open 
 	if (readFile) {
@@ -76,7 +81,7 @@ bool logIn() {
 
 	// same code but for password file
 	string passwordFile = username + "_Password.txt";
-	readFile.open(passwordFile);
+	readFile.open(directory + passwordFile);
 
 	// if statement to check file is open 
 	if (readFile) {
@@ -107,9 +112,12 @@ bool logIn() {
 	else {
 
 		// if statement to compare username and password entered by the user with
-	// information in the system
+		// information in the system
 
 		if ((username == usernameInfo) && (password == passwordInfo)) {
+
+			// calls the return_Username function to send the username info to
+			// Bank_System.
 
 			return true;
 		}
@@ -199,15 +207,21 @@ void signUp() {
 
 	// asks the user to enter an username and password
 	string newUsername, newPassword;
+	string directory = "C:\\Users\\Cardo\\Desktop\\Personal Projects\\Using C++\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\";
+
+	// creates a new balance equal to 0 since it is a new account
+	double newBalance = 0.0;
 	cout << "Enter an username: ";
 	cin >> newUsername;
 
 	cout << "Enter a password: ";
 	cin >> newPassword;
 
-	// creates the new files names to store the credentials
-	string usernameFile = newUsername + "_Username.txt";
-	string passwordFile = newUsername + "_Password.txt";
+	// creates the new files names to store the credentials.
+	// also creates a balance file at the name of the user.
+	string usernameFile = directory + newUsername + "_Username.txt";
+	string passwordFile = directory + newUsername + "_Password.txt";
+	string balanceFile = directory + newUsername + "_Balance.txt";
 
 	// file object to save username and password in a text file.
 	ofstream writeFile;
@@ -226,9 +240,17 @@ void signUp() {
 
 	writeFile.close();
 
+	// opens, writes a balance (0), closes the balance file
+	writeFile.open(balanceFile);
+
+	writeFile << 0.0; // sets the balance of the account to 0.
+
+	writeFile.close();
+
 	// opens the files just created to confirm they are successfully created.
 	ifstream readFile;
 	string checkUsername, checkPassword;
+	int checkBalance = 1;
 
 	// opens, reads and close the file with username
 	readFile.open(usernameFile);
@@ -259,8 +281,19 @@ void signUp() {
 		cout << "\nPassword not found" << endl;
 	}
 
+	// opens, reads, and closes the balance file
+	readFile.open(balanceFile);
+
+	if (readFile) {
+
+		readFile >> checkBalance;
+
+		readFile.close();
+
+	}
+
 	// compare the passwords and usernames to make sure the credentials where seccessfully created.
-	if ((checkUsername == newUsername) && (checkPassword == newPassword)) {
+	if ((checkUsername == newUsername) && (checkPassword == newPassword) && (checkBalance == newBalance)) {
 
 		cout << "\nAccount succesfully created. Login to access your account." << endl;
 	}
@@ -271,3 +304,20 @@ void signUp() {
 	}
 
 }
+
+
+/*
+* Function name: return_Username
+*
+* Function Description:
+*	This function will responsible to return the username using a global variable. So, the balance file is
+*	usable after log in and sign up.
+*
+*	Information:
+*		Type: string
+*		Parameters: None.
+*		Return: string username.
+*/
+
+
+

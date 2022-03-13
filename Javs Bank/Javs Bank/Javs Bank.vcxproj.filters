@@ -36,12 +36,4 @@
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Javs_Password.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-    <Text Include="Javs_Username.txt">
-      <Filter>Resource Files</Filter>
-    </Text>
-  </ItemGroup>
 </Project>
