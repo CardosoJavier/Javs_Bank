@@ -17,6 +17,11 @@
 
 using namespace std;
 
+// prototypes
+int userSelection();
+void show_Menu();
+int account_Interface();
+
 /*
 * Function name: userAccess
 * 
@@ -110,4 +115,102 @@ int userSelection() {
 	}
 
 	return 0;
+}
+
+/*
+* Function name: show_Menu
+*
+* Function Description:
+*	Displays the account menu:
+*		1 - Deposit
+*		2 - Withdraw
+*		3 - Check Balance
+*		0 - Exit
+*
+*	Information:
+*		Type: void
+*		Parameters: None
+*		Return: None.
+*/
+void show_Menu() {
+
+	// shows the user options
+	cout << "\n\nWelcome back, user" << endl << endl;
+	cout << "Choose an option from below: " << endl;
+	cout << "1 - Deposit" << endl;
+	cout << "2 - Withdraw" << endl;
+	cout << "3 - Check Balance" << endl;
+	cout << "0 - Exit" << endl;
+	cout << "\nSelecting: ";
+
+}
+
+/*
+* Function name: account_Interface
+*
+* Function Description:
+*	After the user log in, displays a table with all the options, which are:
+*		1 - Deposit
+*		2 - Withdraw
+*		3 - Check Balance
+*		0 - Exit
+*	So, the function will return the user action.
+*
+*	Information:
+*		Type: int
+*		Parameters: None
+*		Return: 0 - 3, int
+*/
+
+int account_Interface() {
+
+	// prints the menu of the account, where the user will select what to do
+	show_Menu();
+
+	// switch statements to get the user option from the munu and return it.
+	int userOption;
+	cin >> userOption;
+
+	// if statement to make sure the user selects a correct action.
+	if (!(userOption >= 0 && userOption <= 3)) {
+
+		// while loop to get the right input.
+		while (!(userOption >= 0 && userOption <= 3)) {
+
+			cout << "Wrong option. Select a valid action from the menu." << endl;
+			cout << "Selecting: ";
+			cin >> userOption;
+		}
+
+		// return the user option after the right input
+		return userOption;
+
+	}
+
+	else {
+
+		switch (userOption) {
+
+			// deposit
+			case 1:
+				return 1;
+				break;
+
+			// withdraw
+			case 2:
+				return 2;
+				break;
+
+			// check balance
+			case 3:
+				return 3;
+				break;
+
+			//exit
+			case 0:
+				return 0;
+				break;
+		}
+
+	}
 }

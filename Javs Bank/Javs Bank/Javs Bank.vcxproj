@@ -140,6 +140,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="Access.cpp" />
+    <ClCompile Include="Bank_Actions.cpp" />
     <ClCompile Include="Bank_System.cpp" />
     <ClCompile Include="Javs_Bank.cpp" />
     <ClCompile Include="Menus.cpp" />

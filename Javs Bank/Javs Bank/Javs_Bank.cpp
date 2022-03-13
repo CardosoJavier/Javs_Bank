@@ -15,8 +15,6 @@
 
 // libraries
 #include <iostream>
-#include <string>
-#include <fstream>
 
 // files 
 #include "Javs_Bank.h"

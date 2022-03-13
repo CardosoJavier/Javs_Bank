@@ -27,6 +27,9 @@
     <ClCompile Include="Bank_System.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Bank_Actions.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Javs_Bank.h">
