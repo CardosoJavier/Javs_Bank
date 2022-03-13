@@ -146,10 +146,6 @@
   <ItemGroup>
     <ClInclude Include="Javs_Bank.h" />
   </ItemGroup>
-  <ItemGroup>
-    <Text Include="Javs.txt" />
-    <Text Include="password.txt" />
-  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

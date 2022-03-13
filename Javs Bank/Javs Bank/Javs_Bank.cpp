@@ -32,29 +32,58 @@ int main(void) {
 
 	int selection = userSelection();
 
-	// if statements to either login or sign up
-	if (selection == 1) {
-		
-		// if statement to check if access was granted
-		bool checkAccess = false;
-		checkAccess = logIn();
+	while (selection != 0) {
 
-		if (checkAccess == true) {
+		// if statements to either login or sign up
+		if (selection == 1) {
 
-			cout << "\nWelcome back" << endl;
+			// if statement to check if access was granted
+			bool checkAccess = false;
+			checkAccess = logIn();
+
+			if (checkAccess == true) {
+
+				cout << "\nWelcome back" << endl;
+				selection = 0;
+
+			}
+
+			else {
+
+				selection = 0;
+			}
+
 		}
 
 		else {
 
-			cout << "\nContact customer service." << endl;
+			signUp();
+
+			cout << "1 - Login\n0 - exit" << endl;
+			cout << "Selection: ";
+			cin >> selection;
+
+			if ((selection == 1) || (selection == 0)) {
+
+				selection == selection;
+			}
+
+			else {
+				
+				while (selection != 1 && selection != 0) {
+
+					cout << "\nInvalid option. Enter an option from the menu." << endl;
+
+					cout << "1 - Login\n0 - exit" << endl;
+					cout << "Selection: ";
+					cin >> selection;
+				}
+			}
 		}
 
 	}
 
-	else {
-
-		cout << "\nSign up" << endl;
-	}
+	cout << "\nGood bye!" << endl;
 
 	return 0;
 }

@@ -14,3 +14,6 @@ int userSelection();
 
 // 1rs function
 bool logIn();
+
+//2nd function
+void signUp();
