@@ -135,7 +135,7 @@ int userSelection() {
 void show_Menu() {
 
 	// shows the user options
-	cout << "\n\nWelcome back, user" << endl << endl;
+	cout << "\n\nWelcome back, " << return_Username() << endl << endl;
 	cout << "Choose an option from below: " << endl;
 	cout << "1 - Deposit" << endl;
 	cout << "2 - Withdraw" << endl;
@@ -161,7 +161,6 @@ void show_Menu() {
 *		Parameters: None
 *		Return: 0 - 3, int
 */
-
 int account_Interface() {
 
 	// prints the menu of the account, where the user will select what to do

@@ -1,5 +1,6 @@
 #pragma once
 #include <string>
+using namespace std;
 
 /*
 	Functions in Menus.cpp
@@ -21,6 +22,7 @@
 	void signUp();
 
 	// 3rd function
+	string return_Username();
 
 /*
 	Functions in Bank_System.cpp
@@ -41,3 +43,6 @@
 
 	// 3rd function
 	void check_Balance();
+
+	// 4rd function
+	void exit();

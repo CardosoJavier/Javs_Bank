@@ -21,6 +21,10 @@ using namespace std;
 // prototypes
 bool logIn();
 void signUp();
+string return_Username();
+
+// global variables
+string globalUsername = " ";
 
 /*
 * Function name: logIn
@@ -118,7 +122,8 @@ bool logIn() {
 
 			// calls the return_Username function to send the username info to
 			// Bank_System.
-
+			globalUsername = username;
+			return_Username();
 			return true;
 		}
 		// display error message when credentials do not match
@@ -148,8 +153,10 @@ bool logIn() {
 				if ((username == usernameInfo) && (password == passwordInfo)) {
 
 					// set access to granted to stop the while loop and return true
+					globalUsername = username;
+					return_Username();
 					access = true;
-					return true;
+					return 1;
 				}
 
 				else {
@@ -318,6 +325,12 @@ void signUp() {
 *		Parameters: None.
 *		Return: string username.
 */
+string return_Username() {
+
+	string username = globalUsername;
+
+	return username;
+}
 
 
 

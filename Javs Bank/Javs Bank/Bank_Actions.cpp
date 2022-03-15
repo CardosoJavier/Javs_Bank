@@ -18,9 +18,11 @@
 using namespace std;
 
 // prototypes
+
 void deposit();
 void withdraw();
 void check_Balance();
+void exit();
 double readBalance();
 void writeBalance(double newBalance);
 
@@ -92,58 +94,76 @@ void withdraw() {
 
 	cout << "\n\n------------------------------------------------\n\n\n";
 
-	// asks the user to enter the amount to withdraw
-	
+	// if statement to make sure the user has more than 0 funds.
+	int currentBalance = readBalance();
+
+	if (currentBalance < 1) {
+
+		cout << "Current Balance: " << readBalance() << endl << endl;
+		cout << "\You don't have enough funds to withdraw." << endl;
+
+		cout << "\n\n------------------------------------------------\n\n";
+
+		return;
+	}
+
+	// if more than 0 in balance, asks for the amount to withdraw.
+	else {
+
+		// asks the user to enter the amount to withdraw
+
 	// displays current balance
-	cout << "Current Balance: " << readBalance() << endl << endl;
+		cout << "Current Balance: " << readBalance() << endl << endl;
 
-	double amount;
-	cout << "Enter amount: ";
-	cin >> amount;
-	cout << endl;
+		// asks for amout
+		double amount;
+		cout << "Enter amount: ";
+		cin >> amount;
+		cout << endl;
 
-	// if statement to make sure the user enters an amount bigger than 0.
-	if (amount <= 0) {
+		// if statement to make sure the user enters an amount bigger than 0.
+		if (amount <= 0) {
 
-		while (amount <= 0) {
+			while (amount <= 0) {
 
-			cout << "\n\nDeposit amount must be greater than 0." << endl << endl;
+				cout << "\n\nDeposit amount must be greater than 0." << endl << endl;
 
-			cout << "Enter amount: ";
-			cin >> amount;
-			cout << endl;
-		}
-	}
-
-	else if (amount > readBalance()) {
-
-		while (amount > readBalance()) {
-
-			cout << "\n\nInsuficient founds. Enter a valid amount." << endl << endl;
-
-			cout << "Enter amount: ";
-			cin >> amount;
-			cout << endl;
+				cout << "Enter amount: ";
+				cin >> amount;
+				cout << endl;
+			}
 		}
 
+		else if (amount > readBalance()) {
+
+			while (amount > readBalance()) {
+
+				cout << "\n\nInsuficient founds. Enter a valid amount." << endl << endl;
+
+				cout << "Enter amount: ";
+				cin >> amount;
+				cout << endl;
+			}
+
+
+		}
+
+		// gets the current balance
+		double old_Balance = readBalance();
+
+		// displays the old balance
+		cout << "Previous Balance: " << old_Balance << endl;
+
+		// calculates the new balance after amount
+		double new_Balance = old_Balance - amount;
+
+		// writes the new balance after withdrawing 
+		writeBalance(new_Balance);
+
+		// displays the new balance
+		cout << "New Balance: " << readBalance() << endl;
 
 	}
-
-	// gets the current balance
-	double old_Balance = readBalance();
-
-	// displays the old balance
-	cout << "Previous Balance: " << old_Balance << endl;
-
-	// calculates the new balance after amount
-	double new_Balance = old_Balance - amount;
-
-	// writes the new balance after withdrawing 
-	writeBalance(new_Balance);
-
-	// displays the new balance
-	cout << "New Balance: " << readBalance() << endl;
-
 
 	cout << "\n\n------------------------------------------------\n\n";
 }
@@ -172,6 +192,22 @@ void check_Balance() {
 }
 
 /*
+* Function name: exit
+*
+* Function Description:
+*	Prints good bye, username when the user selects exit.
+*
+*	Information:
+*		Type: void
+*		Parameters: None
+*		Return: None
+*/
+void exit() {
+
+	cout << "\nGood bye, " + return_Username() << endl;
+}
+
+/*
 * Function name: readBalance
 *
 * Function Description:
@@ -188,7 +224,7 @@ double readBalance() {
 	ifstream readBalance;
 	double balance = 0;
 
-	readBalance.open("C:\\Users\\Cardo\\Desktop\\Personal Projects\\Using C++\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\Javs_Balance.txt");
+	readBalance.open("C:\\Users\\Cardo\\Desktop\\Personal Projects\\Using C++\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\" + return_Username() + "_Balance.txt");
 
 	if (readBalance) {
 
@@ -224,7 +260,7 @@ void writeBalance(double newBalance) {
 	// opens, writes, and close the balance file
 	ofstream writeBalance;
 
-	writeBalance.open("C:\\Users\\Cardo\\Desktop\\Personal Projects\\Using C++\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\Javs_Balance.txt");
+	writeBalance.open("C:\\Users\\Cardo\\Desktop\\Personal Projects\\Using C++\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\" + return_Username() + "_Balance.txt");
 
 	if (writeBalance.fail()) {
 

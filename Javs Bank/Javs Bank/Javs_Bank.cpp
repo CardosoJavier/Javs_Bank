@@ -24,8 +24,8 @@ using namespace std;
 
 // main function
 int main(void) {
-
-	// run the entire bank program
+	
+	//run the entire bank program
 	run_System();
 
 	return 0;
