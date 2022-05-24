@@ -135,13 +135,16 @@ int userSelection() {
 void show_Menu() {
 
 	// shows the user options
-	cout << "\n\nWelcome back, " << return_Username() << endl << endl;
-	cout << "Choose an option from below: " << endl;
-	cout << "1 - Deposit" << endl;
-	cout << "2 - Withdraw" << endl;
-	cout << "3 - Check Balance" << endl;
-	cout << "0 - Exit" << endl;
-	cout << "\nSelecting: ";
+	cout << "\n\n-----------------------------------------------------------------------------------------------------------------------\n\n";
+	cout << endl;
+	cout << setw(49) << "Welcome back, " << return_Username() << endl << endl;
+	cout << setw(64) << "Choose an option from below: " << endl << endl;
+	cout << setw(52) << "1 - Deposit" << endl;
+	cout << setw(53) << "2 - Withdraw" << endl;
+	cout << setw(58) << "3 - Check Balance" << endl;
+	cout << setw(49) << "0 - Exit" << endl;
+	cout << endl;
+	cout << setw(46) << "Selecting: ";
 
 }
 
@@ -176,8 +179,9 @@ int account_Interface() {
 		// while loop to get the right input.
 		while (!(userOption >= 0 && userOption <= 3)) {
 
-			cout << "Wrong option. Select a valid action from the menu." << endl;
-			cout << "Selecting: ";
+			cout << endl;
+			cout << setw(85) << "Wrong option. Select a valid action from the menu." << endl;
+			cout << setw(46) << "Selecting: ";
 			cin >> userOption;
 		}
 

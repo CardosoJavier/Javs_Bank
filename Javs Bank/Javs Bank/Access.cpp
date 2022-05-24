@@ -167,6 +167,13 @@ bool logIn() {
 					// if statement to avoid ask the user to try again after the third attempt.
 					if (attempt > 3) {
 
+						attempt = 0;
+
+						// displays a message if the user did not enter the correct credentials after
+						// the third time.
+						cout << "\nRemaining attepts: " << attempt << endl;
+						cout << "Contact customer service. Good bye!" << endl;
+
 						return false;
 					}
 
@@ -186,12 +193,7 @@ bool logIn() {
 				}
 
 			}
-
-			// displays a message if the user did not enter the correct credentials after
-			// the third time.
-			cout << "\nRemaining attepts: " << attempt << endl;
-			cout << "Contact customer service. Good bye!" << endl;
-
+			
 		}
 
 	}
