@@ -43,7 +43,7 @@ bool logIn() {
 	// variable to hold username and password entered by user
 	string username;
 	string password;
-	string directory = "C:\\Users\\Cardo\\Desktop\\Personal Projects\\C++ Projects\\Javs Bank Repository\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\";
+	string directory = "./Credentials/";
 
 	// asks and gets username and password
 
@@ -216,7 +216,7 @@ void signUp() {
 
 	// asks the user to enter an username and password
 	string newUsername, newPassword;
-	string directory = "C:\\Users\\Cardo\\Desktop\\Personal Projects\\C++ Projects\\Javs Bank Repository\\Javs_Bank\\Javs Bank\\Javs Bank\\Credentials\\";
+	string directory = ".\\Credentials\\";
 
 	// creates a new balance equal to 0 since it is a new account
 	double newBalance = 0.0;

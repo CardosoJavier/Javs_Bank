@@ -1,3 +1,10 @@
-﻿  Bank_Actions.cpp
+﻿  Access.cpp
+  Bank_Actions.cpp
 C:\Users\Cardo\Desktop\Personal Projects\C++ Projects\Javs Bank Repository\Javs_Bank\Javs Bank\Javs Bank\Bank_Actions.cpp(97,21): warning C4244: 'initializing': conversion from 'double' to 'int', possible loss of data
+  Bank_System.cpp
+  Javs_Bank.cpp
+  Menus.cpp
+  Generating Code...
+C:\Users\Cardo\Desktop\Personal Projects\C++ Projects\Javs Bank Repository\Javs_Bank\Javs Bank\Javs Bank\Menus.cpp(219): warning C4715: 'account_Interface': not all control paths return a value
+C:\Users\Cardo\Desktop\Personal Projects\C++ Projects\Javs Bank Repository\Javs_Bank\Javs Bank\Javs Bank\Access.cpp(201): warning C4715: 'logIn': not all control paths return a value
   Javs Bank.vcxproj -> C:\Users\Cardo\Desktop\Personal Projects\C++ Projects\Javs Bank Repository\Javs_Bank\Javs Bank\x64\Debug\Javs Bank.exe
